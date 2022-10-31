@@ -1,0 +1,38 @@
+<p>portrait works!</p>
+
+<main
+  class="page-wrapper"
+  fxLayout="column"
+  fxLayoutAlign="_ center"
+  fxLayoutGap="calc(var(--unit) * 8)"
+>
+  <mat-card
+    class="example-card"
+    *ngFor="let item of [].constructor(10); index as index"
+    appObserveElement
+    #intersection="intersection"
+    [class.example-card--is-intersecting]="intersection._isIntersecting"
+    (isIntersecting)="isIntersecting($event, index)"
+    [isContinuous]="true"
+  >
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Shiba Inu</mat-card-title>
+      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="assets/elefante.jpg" alt="Photo of a Elefante" />
+
+    <mat-card-content>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+        alias tenetur quasi dicta aliquam fuga hic nulla iusto soluta voluptas
+        nisi harum corrupti recusandae maxime, ducimus nesciunt inventore
+        consectetur omnis.
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>Me gusta</button>
+      <button mat-button>Compartir</button>
+    </mat-card-actions>
+  </mat-card>
+</main>
